@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">爱美人</string>
+    <string name="main_tab_icon">icon</string>
+    <string name="main_tab_home_btn_name">首页</string>
+    <string name="main_tab_circle_btn_name">圈子</string>
+    <string name="main_tab_search_btn_name">搜索</string>
+    <string name="main_tab_category_btn_name">分类</string>
+    <string name="main_tab_message_btn_name">消息</string>
+    <string name="main_tab_find_btn_name">发现</string>
+    <string name="main_tab_account_btn_name">我的</string>
+    <string name="menu_refresh_btn_name">刷新</string>
+    <string name="menu_sendSns_btn_name">发布图片</string>
+    <string name="msg_cancel_name">取消</string>
+    <string name="msg_goback_name">返回</string>
+    <string name="msg_jump_text">点击跳过</string>
+    <string name="msg_jump_number_text">点击跳过 %d</string>
+    <string name="msg_login_info_name">您还没有登录,美人不能让您访问这个资源哦~\n要登录一下吗?</string>
+
+    <!-- plugins image select -->
+    <string name="folder_all">All Images</string>
+    <string name="preview">Preview</string>
+    <string name="msg_no_camera">No system camera found</string>
+    <string name="msg_amount_limit">Select images amount is limit</string>
+    <string name="action_done">Done</string>
+    <string name="photo_unit">Shot</string>
+    <string name="tip_take_photo">Take photo</string>
+
+    <string name="pay_result_tip">这个界面用于显示第三方app通过微信支付的结果</string>
+</resources>

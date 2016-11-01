@@ -1,0 +1,24 @@
+<resources>
+
+
+
+    <style name="ThemeDeviceDefaultLight" parent="android:Theme.DeviceDefault.Light">
+        <item name="android:actionBarSize">49dp</item>
+        <item name="android:actionBarStyle" >@style/appActionBarStyle</item>
+    </style>
+
+    <style name="appActionBarStyle" parent="android:Widget.ActionBar" >
+        <item name="android:background">@drawable/action_bar_shape</item>
+    </style>
+
+    <!-- Navigation Header -->
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">@color/navpage</item>
+    </style>
+
+</resources>

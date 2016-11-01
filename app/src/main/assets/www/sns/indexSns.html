@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title></title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="res/images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="res/images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="res/images/favicon/mstile-144x144.png">
+    <!-- For Windows Phone -->
+
+    <!-- CORE CSS-->
+    <link href="res/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="res/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->
+    <link href="res/css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="res/css/slick.css" type="text/css" media="all" rel="stylesheet">
+
+</head>
+<body>
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+    <div id="bgss"></div>
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+<!-- End Page Loading -->
+
+<!-- START MAIN -->
+<div id="main" class="x-pic">
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+        <!-- START CONTENT -->
+        <section id="content" >
+            <!--start container-->
+            <div class="container" style="position:relative">
+                <!-- start Preselecting a tab-->
+                <div id="preselecting-tab" class="section" >
+                    <div class="row" style="position: fixed;width:100%;top:0;z-index: 100">
+                        <div class="col s12" style="padding:0 2px 0 2px;margin:0 auto">
+                            <ul id="navDiv" class="tabs z-depth-1 amber" style="height: 32px">
+                                <li class="tab col s12" style="height: 32px; line-height: 32px;"><a
+                                        class="white-text waves-effect waves-light " href="#catDiv">^_^</a>
+                                </li>
+                            </ul>
+                            <script id="navTmpl" type="text/html">
+                                {{each data as item i}}
+                                <li class="tab col s4" style="height: 32px; line-height: 32px;">
+                                    <a href="#{{item.code}}" onclick="initContentData('{{item.id}}', '{{item.code}}')"
+                                       class="white-text waves-effect waves-light ">{{item.name}}</a>
+                                </li>
+                                {{/each}}
+                            </script>
+                        </div>
+                    </div>
+
+                    <!-- 内容 -->
+                    <div id="contentDiv"></div>
+                    <script id="contentTmpl" type="text/html">
+                        {{each data as item i}}
+                        <div id="{{item.code}}"></div>
+                        {{/each}}
+                    </script>
+                    <!-- 内容模板 -->
+                    <script id="itemTmpl" type="text/html">
+                        <div class="row" style="margin-top: 30px">
+                            <div class="col s12">
+                                <div class="row blog-body">
+                                    {{each data as item i}}
+                                    <div class="col s12">
+                                        <div class="blog" style="max-width: 50%; padding: 3px;">
+                                            <div class="card">
+                                                {{if item.hasOwnProperty('categoryId')}}
+                                                <div class="card-image">
+                                                    <a href="javascript:void(0)"
+                                                       onclick="clickItem('{{= item.id}}', true)">
+                                                        <img class="lazy" style="max-height: 360px;"
+                                                             src="res/images/loading.png"
+                                                             data-original="{{= item.iconMediumUrl}}"/>
+                                                    </a>
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="row">
+                                                        <span class="left">
+                                                            <a  href="javascript:void(0)" onclick="clickItem('{{= item.id}}', true, '{{= item.name}}')">
+                                                            {{= item.name}}
+                                                            </a>
+                                                        </span>
+                                                    </p>
+                                                    <p class="ultra-small">
+                                                        <a  href="javascript:void(0)" onclick="clickItem('{{= item.id}}', true, '{{= item.name}}')">
+                                                            {{= item.subName}}
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                                {{else}}
+                                                <div class="card-image">
+                                                    <a href="javascript:void(0)"
+                                                       onclick="clickItem('{{= item.id}}', false, '{{= item.name}}')">
+                                                        <img class="lazy" style="max-height: 360px;"
+                                                             src="res/images/loading.png"
+                                                             data-original="{{= item.iconMediumUrl}}"/>
+                                                    </a>
+                                                </div>
+                                                {{/if}}
+                                                <div class="card-content">
+                                                    <p class="row">
+                                                        <span class="left">
+                                                            <a  href="javascript:void(0)" onclick="clickItem('{{= item.id}}', false, '{{= item.name}}')">
+                                                            </a>
+                                                        </span>
+                                                    </p>
+                                                    <p class="ultra-small"><a  href="javascript:void(0)" onclick="clickItem('{{= item.id}}', false)">
+                                                    </a>{{= item.subName}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+                <!-- end Preselecting a tab-->
+            </div>
+            <!--end container-->
+        </section>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END WRAPPER -->
+</div>
+<!-- END MAIN -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- scrollUp -->
+<div id="scrollUp" style="display: none;">
+    <a class="btn-floating btn blue"> <i class="mdi-hardware-keyboard-arrow-up"></i>
+    </a>
+</div>
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="res/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="res/js/jquery.mobile.custom.min.js"></script>
+<!-- app js -->
+<script type="text/javascript" src="res/js/materialize.js"></script>
+<script type="text/javascript" src="res/js/plugins.js"></script>
+<!-- plugins -->
+<script type="text/javascript" src="res/js/plugins/app.rt.js"></script>
+<script type="text/javascript" src="res/js/plugins/app.api.js"></script>
+<script type="text/javascript" src="res/js/plugins/art-template.js"></script>
+<script type="text/javascript" src="res/js/plugins/app.pull.js"></script>
+<script type="text/javascript" src="res/js/plugins/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="res/js/plugins/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="res/js/plugins/slick.min.js"></script>
+<script type="text/javascript" src="res/js/plugins/jquery.scrollUp.min.js"></script>
+
+<script type="text/javascript">
+    var _id;
+    var _code;
+    var _totalPage;
+    var _nowPage;
+    var _nextPage;
+    var containerProducts;
+    var param;
+    var webBean;
+    var contentParam;
+    var contentBean;
+    $(window).load(function () {
+        initData();
+        initScroll();
+    });
+
+    $(document).ready(function () {
+    });
+
+    function initScroll() {
+        var setting = {
+            pullDown: function () {
+                // messageToast("更新");
+                initContentData(_id, _code, false);
+            },
+            pullUp: function () {
+                if (_nowPage < _totalPage) {
+                    initContentData(_id, _code, true, _nextPage);
+                } else {
+                    messageToast("没有啦.");
+                }
+            }
+        }
+        $(document.body).pull(setting);
+    }
+
+    function clickItem(id, isItem, catName) {
+        var param = new Object();
+        param.id = id;
+        var attr = new Object();
+        if (isItem == true) {
+            appHref("sns/indexSnsItem.html", param, attr);
+        } else {
+            var catItem = new Object();
+            catItem.id = id;
+            catItem.name = catName;
+            attr.item = catItem;
+            appHref("sns/indexSnsItemList.html", param, attr);
+        }
+    }
+
+    // 初始化数据
+    function initData() {
+        // 初始化参数
+        param = initParam();
+        // 调用后台业务逻辑,请求画面数据
+        executeLogic("sns.indexSnsNav", param, null, function (result) {
+            webBean = result;
+            // 检查业务逻辑调用是否成功
+            if (webBean.success == false) {
+                // 调用失败,返回测试数据.
+                webBean = testData();
+            }
+
+            // 生成导航
+            $("#navDiv").children().remove();
+            $("#navDiv").append(template("navTmpl", webBean));
+
+            // 生成每个导航的div
+            $("#contentDiv").children().remove();
+            $("#contentDiv").append(template("contentTmpl", webBean));
+            // 获取到第一个卡片
+            var funName = $("#navDiv li:first a").attr("onclick");
+            // 初始化画面
+            initView();
+            // 初始化第一个卡片的数据
+            eval(funName);
+        });
+    } // end initData fun.
+
+    // 初始化画面
+    function initView() {
+        $("ul.tabs").tabs();
+        $.scrollUp({
+            animation: 'fade',
+            topSpeed: 1,
+            scrollText: $("#scrollUp").html()
+        });
+    }
+
+    function initMasonry() {
+        containerProducts = $(".blog-body");
+        containerProducts.masonry({
+            itemSelector: ".blog"
+        });
+        $("img.lazy").lazyload({
+            effect: "fadeIn",
+            threshold: 100,
+            load: function (i, item) {
+                containerProducts.masonry({
+                    itemSelector: ".blog"
+                });
+            }
+        });
+    }
+
+    function initContentData(id, code, append, nextPage) {
+        //页面加载过程
+        showLoading(true);
+        _id = id;
+        _code = code;
+        contentParam = initParam();
+        contentParam.id = id;
+        contentParam.code = code;
+        contentParam.maxRow = 20;
+
+        //判断如果追加为真
+        if (append == true) {
+            contentParam.startRow = nextPage;
+        } else {
+            contentParam.startRow = 0;
+        }
+        setTimeout(function () {
+            httpRequest("sns.indexSnsItemList", contentParam, null, function (data) {
+                contentBean = data;
+                if (contentBean.success == false) {
+                    showLoading(false);
+                    return;
+                }
+                // 是否有数据返回
+                if (isEmpty(contentBean.data)) {
+                    showLoading(false);
+                    return;
+                }
+                // 初始化分页信息
+                _totalPage = contentBean.pageInfo.totalPage;
+                _nowPage = contentBean.pageInfo.nowPage;
+                _nextPage = contentBean.pageInfo.nextPage;
+
+                if (append == true) {
+                    var contentHtml = template("itemTmpl", contentBean);
+                    $("#" + code).append(contentHtml);
+                } else {
+                    $("#" + code).children().remove();
+                    $("#" + code).append(template("itemTmpl", contentBean));
+                }
+                //瀑布流插件
+                initMasonry();
+                showLoading(false);
+            });
+        }, 500);
+    } // end fun.
+
+    // 初始化画面
+    function testData() {
+        if (param.isDevice) {
+            return;
+        }
+        var data = {
+            "sessionId": "bRLH83CGjeg7fsRYzke0Xw",
+            "param": {
+                "remoteUrl": "47.88.163.154",
+                "dt": "json"
+            },
+            "data": [{
+                "id": "ba56ec0e-a5e4-4dc6-8a30-7327d532301f",
+                "parentId": "ab246930-82ca-4fd1-aed1-e27a68428f4f",
+                "level": 0,
+                "name": "热 门",
+                "code": "imrAppSnsHot",
+                "parentCode": "imrAppSnsNav",
+                "indexs": 3970,
+                "parentName": "圈子顶部导航"
+            }, {
+                "id": "7ef1bb03-d97c-4483-9329-99ae4d492a44",
+                "parentId": "ab246930-82ca-4fd1-aed1-e27a68428f4f",
+                "level": 0,
+                "name": "分 类",
+                "code": "imrAppSnsCat",
+                "parentCode": "imrAppSnsNav",
+                "indexs": 3960,
+                "parentName": "圈子顶部导航"
+            }, {
+                "id": "eaff0472-3e30-4402-bcfe-15a90285ae22",
+                "parentId": "ab246930-82ca-4fd1-aed1-e27a68428f4f",
+                "level": 0,
+                "name": "精 品",
+                "code": "imrAppSnsClassic",
+                "parentCode": "imrAppSnsNav",
+                "indexs": 3950,
+                "parentName": "圈子顶部导航"
+            }],
+            "success": true
+        };
+        return data;
+    }
+
+</script>
+</body>
+</html>
+
+
+

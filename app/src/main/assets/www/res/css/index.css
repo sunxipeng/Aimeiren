@@ -1,0 +1,526 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+.areaInput #getindexpsd {
+	width:100%
+}
+body {
+	-webkit-text-size-adjust:none;
+	background: #fff;
+	background-size: 100% 100%;
+	font-family: "微软雅黑";
+	margin: 0 auto;
+	font-size: 14px;
+}
+a {
+	color: #729aae;
+	text-decoration: none;
+	font-size: 16px;
+}
+img {
+	height: auto;
+	width: auto\9;
+	max-width: 100%;
+}
+.font40 {
+	font-size: 40px;
+}
+.vertical {
+	vertical-align: middle;
+}
+.center {
+	text-align: center;
+}
+.orange, .moneyR .orange {
+	color: #f5572d;
+}
+.none {
+	display: none;
+}
+.ml {
+	margin-left: 8px;
+}
+.fontColor {
+	color: #e93939;
+}
+.size16 {
+	font-size: 16px;
+}
+.font14 {
+	font-size: 14px;
+}
+.size20 {
+	font-size: 20px;
+}
+.tp30 {
+	margin-top: 30px;
+}
+.font20 {
+	font-size: 20px;
+}
+.width90 {
+	width: 90%;
+	height: 3px;
+	background: #dadada;
+	margin-top: 25px;
+}
+.mt20 {
+	margin-top: 20px;
+}
+.mobile-doc .mb20 {
+	margin-bottom: 20px;
+}
+.borderB {
+	border-bottom: 1px solid #e6e6e6;
+}
+.pos {
+	position: relative;
+	overflow: hidden;
+}
+.progress {
+	width: 10%;
+	position: absolute;
+	background: #904ecb;
+	height: 3px;
+	top: 8px;
+}
+.areaInput .revenue {
+	width: 40%;
+}
+/*登录*/
+.top {
+	background: #fff;
+	padding: 16px 10px 10px 10px;
+	border-bottom: 1px solid #e7e7e7;
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+	border-bottom: 1px solid #b59fc9;
+}
+.lr {
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+}
+.center .lr p {
+	font-size: 14px;
+	margin: 0 10px;
+}
+.loginL {
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	text-align: left;
+}
+.colorLogin {
+	color: #729aae;
+}
+.loginR {
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	text-align: right;
+	margin-top: 3px;
+}
+.login_body {
+	background: #fff;
+	border: 1px solid #cecece;
+	border-radius: 5px;
+	margin: 10px 5px;
+}
+.login_body .font {
+	color: #f5572d;
+	font-size: 30px;
+	font-weight: bold;
+}
+.pd20 {
+	padding-top: 20px;
+}
+.pd10 {
+	padding-top: 10px;
+}
+.pd15 {
+	padding: 15px;
+}
+.msgBox {
+	border-bottom: 1px solid #e6e6e6;
+	padding-bottom: 20px;
+}
+.cname {
+	padding-left: 10px;
+}
+.logoL img {
+	width: 90px;
+}
+.centerTop {
+	border-bottom: 1px solid #e9e9e9;
+	margin: 0 10px;
+	padding: 13px 0;
+	color: #1f1f1f;
+	position: relative;
+}
+.centerTop div {
+	text-align: left;
+	font-size: 16px;
+	font-weight: bold;
+}
+.bidfont p {
+	line-height: 30px;
+}
+.centerTop div img {
+	width: 10px;
+}
+.centerTop div.arrows {
+	position: absolute;
+	right: 0px;
+	top: 13px;
+}
+.bid {
+	margin: 0 10px;
+	padding: 10px;
+	display: -webkit-box;
+}
+.bidNum {
+	width: 40%;
+}
+.bidfont {
+	width: 60%;
+}
+.bid div {
+	text-align: left;
+}
+.bidNum p .fontColor {
+	font-size: 30px;
+}
+.bidNum p span, .bidfont p {
+	font-size: 14px;
+}
+.bidfont span {
+	font-size: 20px;
+}
+.bidBtn {
+	padding-bottom: 8px;
+	text-align: center;
+}
+.bidBtn a {
+	background: #a570d4;
+	color: #fff;
+	padding: 9px;
+	width: 88%;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 3px;
+}
+.bidBtn a:hover {
+	background: #ea4f15;
+}
+.newbid {
+	color: #fff;
+	border-radius: 5px;
+	font-size: 9px;
+	margin-left: 10px;
+	padding: 4px 7px;
+	vertical-align: middle;
+}
+.bid1 {
+	background: #f2c240;
+}
+.bid2 {
+	background: #80b5eb;
+}
+.bid3 {
+	background: #8edc75;
+}
+.chart img {
+	padding-right: 5px;
+}
+.line {
+	padding: 12px 10px;
+	border-bottom: 1px solid #e6e6e6;
+	margin: 0 10px;
+}
+.line .loginL {
+	color: #444;
+}
+/*登录*/
+.logonBtn {
+	margin-top:20px;
+}
+.logonBtn, .registerBtn {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.logonBtn .registerBtn, .logonBtn a {
+	display: inline-block;
+	background: #ffc107;
+	width: 88%;
+	padding: 10px;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 3px;
+	font-size: 16px;
+	border: none;
+	color:#fff;
+}
+.logonBtn a:hover {
+	background: #ea4f15;
+}
+.registerBtn a {
+	display: inline-block;
+	background: #fff;
+	width: 88%;
+	padding: 10px;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 3px;
+	font-size: 16px;
+
+}
+.areaInput {
+	background: #f2f2f2;
+}
+.logon {
+	color: #fff;
+}
+.register {
+	color: #a570d4;
+}
+.bidBox, .bankBox {
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+.borderT .inputW {
+	width: 35%;
+}
+.areaInput {
+	padding: 10px 20px;
+	position: relative;
+	margin-bottom:10px;
+}
+.logonBox {
+	margin:20px 15px 5px 15px;
+}
+.areaInput:first-child {
+	border-bottom: 1px solid #e6e6e6;
+}
+.areaInput label {
+	font-size: 16px;
+}
+.areaInput input {
+	width: 83%;
+	background:#f2f2f2;
+	height: 22px;
+	padding-left: 5px;
+	border: none;
+	font-size: 16px;
+	vertical-align: middle;
+	color:#bdbdc3;
+}
+.areaInput #loginName, .areaInput #cipher {
+	width: 70%;
+	margin:0;
+}
+.areaInput input.w85 {
+	margin-left: 0px;
+	vertical-align: middle;
+}
+.account p {
+	padding: 14px;
+}
+.accountBtn {
+	background: #fff;
+	padding: 20px 15px;
+	border-bottom: 1px solid #e6e6e6;
+}
+.accountBtn a {
+	color: #888888;
+}
+.displayBox {
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+}
+.fontNum {
+	color: #666666;
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+	margin-top: 10px;
+}
+.baifen {
+	margin-top: 18px;
+	margin-left: 7px;
+	color: #999999;
+	text-align: right;
+}
+.fontNum span {
+	color: #f5572d;
+}
+.time {
+	vertical-align: middle;
+}
+.textL {
+	text-align: left;
+	width: 50%;
+}
+.textR {
+	text-align: right;
+	width: 50%;
+}
+.money {
+	margin-top: 20px;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	background: #ffffff;
+}
+.money div {
+	padding: 20px 15px;
+}
+.useMoney {
+	border-bottom: 1px solid #e6e6e6;
+}
+.tp10 {
+	padding-top: 10px;
+}
+.useMoney p, .freezeMoney p {
+	color: #888888;
+}
+.useMoney .tp10, .freezeMoney .tp10 {
+	color: #666;
+	font-size: 18px;
+}
+#wx-mobile-bd {
+	display: flex;
+	flex-flow: column;
+}
+.account {
+	background: yellow;
+	height: 60%;
+}
+.accountBtn {
+	flex: 1;
+	background: red;
+}
+.money {
+	flex: 2;
+	background: #0000ff;
+}
+.borderT {
+	border-top: 1px solid #e6e6e6;
+	margin-top: 15px;
+}
+.logonBtn input, #incomeBtn input {
+	color: #fff;
+	display: inline-block;
+	background: #ea4f15;
+	width: 94%;
+	padding: 10px;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 16px;
+	border: none;
+}
+.registerBtn input {
+	color: #999999;
+	display: inline-block;
+	background: #fff;
+	width: 94%;
+	padding: 10px;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 3px;
+	font-size: 16px;
+	border: none;
+}
+.phoneName {
+	margin-right:10px;
+	background:url(../images/phone.png) no-repeat scroll;
+	width:19px;
+	height:25px;
+	background-size:19px 25px;
+	display:inline-block;
+	vertical-align:middle
+}
+.nameicons {
+	margin-right:10px;
+	background:url(../images/1_03.png) no-repeat scroll;
+	width:19px;
+	height:25px;
+	background-size:19px 25px;
+	display:inline-block;
+	vertical-align:middle
+}
+.passwordicon {
+	margin-right:10px;
+	background:url(../images/1_06.png) no-repeat scroll;
+	width:19px;
+	height:25px;
+	background-size:19px 25px;
+	display:inline-block;
+	vertical-align:middle
+}
+.orange {
+	top: 0;
+	right: 0;
+	background:#ea4f15;
+	width:100px;
+	text-align:center;
+	position:absolute;
+}
+.areaInput {
+	position:relative;
+}
+.orange a {
+	width:100px;
+	color:#fff;
+	font-size:12px;
+	height:42px;
+	line-height:42px;
+	display:inline-block;
+}
+input{
+-webkit-appearance: none; 
+}
+
+.index_bg{
+	background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+}
+.index_text{ text-align: center;}
+.index_titel{    font-size: 34px;
+    color: #fff;
+    padding-top: 190px;
+    padding-bottom: 20px;}
+.index_ftitel{
+	color: #fff;
+    font-size: 18px;
+}
+.index_btn .index_login,.index_btn .index_go{    
+	width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+.index_btn .index_login{ 
+	margin-bottom: 60px;
+}
+.index_btn .index_login a{    
+	background: #ea4f15;
+    color: #000;
+    width: 80%;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.index_btn .index_go a{    
+	border: 1px solid #ea4f15;
+    color: #ea4f15;
+    width: 80%;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+

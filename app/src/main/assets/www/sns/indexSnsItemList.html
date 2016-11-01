@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title></title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="res/images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="res/images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="res/images/favicon/mstile-144x144.png">
+    <!-- For Windows Phone -->
+
+    <!-- CORE CSS-->
+    <link href="res/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="res/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->
+    <link href="res/css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="res/css/slick.css" type="text/css" media="all" rel="stylesheet">
+
+</head>
+<body>
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+    <div id="bgss"></div>
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+<!-- End Page Loading -->
+
+<!-- START MAIN -->
+<div id="main" class="x-pic">
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+        <!-- START CONTENT -->
+        <section id="content">
+            <!--start container-->
+            <div class="container">
+                <div class="section">
+                    <!-- cat div -->
+                    <div id="catDiv" class="row">
+                        <!-- cat nav -->
+                        <div class="col s12 " style="padding: 5px 3px 0 3px">
+                            <nav class="amber">
+                                <div class="nav-wrapper">
+                                    <div class="col s12">
+                                        <ul>
+                                            <li><i class="mdi-navigation-menu"></i></li>
+                                            <li id="catName"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- cat data -->
+                        <div id="contentDiv" class="col s12">
+                        </div>
+                    </div>
+                </div>
+                <!-- start Preselecting a tab-->
+                <script id="contentTmpl" type="text/html">
+                    <div class="row blog-body">
+                        <div class="blog-sizer"></div>
+                        {{each data as item i}}
+                        <div class="col s12">
+                            <div class="blog" style="max-width: 50%; padding: 3px 3px 3px 3px;">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="javascript:void(0)" onclick="clickItem('{{item.id}}')">
+                                            <img class="lazy" src="res/images/loading.png"
+                                                 data-original="{{item.iconMediumUrl}}"/>
+                                        </a>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="row">
+                                            <span class="left">
+                                                <a href="javascript:void(0)" onclick="clickItem('{{item.id}}')">
+                                                {{item.name}}
+                                                </a>
+                                            </span>
+                                        </p>
+                                        <p class="ultra-small">
+                                            <a href="javascript:void(0)" onclick="clickItem('{{item.id}}')">
+                                                {{item.subName}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </script>
+            </div>
+            <!--end container-->
+        </section>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END WRAPPER -->
+</div>
+<!-- END MAIN -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- scrollUp -->
+<div id="scrollUp" style="display: none;">
+    <a class="btn-floating btn blue"> <i class="mdi-hardware-keyboard-arrow-up"></i>
+    </a>
+</div>
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="res/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="res/js/jquery.mobile.custom.min.js"></script>
+<!-- app js -->
+<script type="text/javascript" src="res/js/materialize.js"></script>
+<script type="text/javascript" src="res/js/plugins.js"></script>
+<!-- plugins -->
+<script type="text/javascript" src="res/js/plugins/app.rt.js"></script>
+<script type="text/javascript" src="res/js/plugins/app.api.js"></script>
+<script type="text/javascript" src="res/js/plugins/art-template.js"></script>
+<script type="text/javascript" src="res/js/plugins/app.pull.js"></script>
+<script type="text/javascript" src="res/js/plugins/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="res/js/plugins/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="res/js/plugins/slick.min.js"></script>
+<script type="text/javascript" src="res/js/plugins/jquery.scrollUp.min.js"></script>
+
+<script type="text/javascript">
+    var _id;
+    var _code;
+    var _name;
+    var _totalPage;
+    var _nowPage;
+    var _nextPage;
+    var param;
+    var webBean;
+
+    $(window).load(function () {
+        initData();
+        initView();
+        initScroll();
+    });
+
+    $(document).ready(function () {
+    });
+
+    function initData() {
+        // 初始化数据
+        param = initParam();
+        _id = $.getUrlParam('id', param);
+        _code = $.getUrlParam('code', param);
+        _name = $.getUrlParam('name', param);
+        $("#catName").html(_name);
+
+        initContentData(_id, _code, false, 0);
+    } // end fun.
+
+    // 初始化数据
+    function initContentData(id, code, append, nextPage) {
+        //页面加载过程
+        showLoading(true);
+        _id = id;
+        _code = code;
+        var contentParam = initParam();
+        contentParam.id = id;
+        contentParam.code = code;
+        contentParam.maxRow = 20;
+
+        //判断如果追加为真
+        if (append == true) {
+            contentParam.startRow = nextPage;
+        } else {
+            contentParam.startRow = 0;
+        }
+        setTimeout(function () {
+            httpRequest("sns.indexSnsItemList", contentParam, null, function (data) {
+                webBean = data;
+                if (webBean.success == false) {
+                    showLoading(false);
+                    return;
+                }
+
+                // 初始化分页信息
+                _totalPage = webBean.pageInfo.totalPage;
+                _nowPage = webBean.pageInfo.nowPage;
+                _nextPage = webBean.pageInfo.nextPage;
+
+                if (append == true) {
+                    var contentHtml = template("contentTmpl", webBean);
+                    $("#contentDiv").append(contentHtml);
+                } else {
+                    $("#contentDiv").children().remove();
+                    $("#contentDiv").append(template("contentTmpl", webBean));
+                }
+                //瀑布流插件
+                initMasonry();
+                showLoading(false);
+            });
+        }, 500);
+    } // end fun.
+
+    function initScroll() {
+        var setting = {
+            pullDown: function () {
+                // messageToast("更新");
+                initContentData(_id, _code, false);
+            },
+            pullUp: function () {
+                if (_nowPage < _totalPage) {
+                    initContentData(_id, _code, true, _nextPage);
+                } else {
+                    messageToast("没有啦.");
+                }
+            }
+        }
+        $(document.body).pull(setting);
+    }
+
+    function clickItem(id) {
+        var param = new Object();
+        param.id = id;
+        var attr = new Object();
+        appHref("sns/indexSnsItem.html", param, attr);
+    }
+
+    // 初始化画面
+    function initView() {
+        $.scrollUp({
+            animation: 'fade',
+            topSpeed: 1,
+            scrollText: $("#scrollUp").html()
+        });
+    }
+
+    function initMasonry() {
+        containerProducts = $(".blog-body");
+        containerProducts.masonry({
+            itemSelector: ".blog"
+        });
+        $("img.lazy").lazyload({
+            effect: "fadeIn",
+            threshold: 100,
+            load: function (i, item) {
+                containerProducts.masonry({
+                    itemSelector: ".blog"
+                });
+            }
+        });
+    }
+</script>
+</body>
+</html>

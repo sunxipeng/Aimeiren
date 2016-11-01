@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-tap-highlight" content="no">
+<title></title>
+
+<!-- Favicons-->
+<link rel="icon" href="res/images/favicon/favicon-32x32.png" sizes="32x32">
+<!-- Favicons-->
+<link rel="apple-touch-icon-precomposed" href="res/images/favicon/apple-touch-icon-152x152.png">
+<!-- For iPhone -->
+<meta name="msapplication-TileColor" content="#00bcd4">
+<meta name="msapplication-TileImage" content="res/images/favicon/mstile-144x144.png">
+<!-- For Windows Phone -->
+
+<!-- CORE CSS-->
+<link href="res/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+<link href="res/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+<!-- Custome CSS-->
+<link href="res/css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+<link href="res/css/slick.css" type="text/css" media="all" rel="stylesheet">
+<style>
+body { 
+  padding:0; margin:0;
+}
+/*淡入淡出*/
+@-webkit-keyframes fadeIn {
+0% {
+opacity: 0; /*初始状态 透明度为0*/
+}
+50% {
+opacity: 0.5; /*中间状态 透明度为0.5*/
+}
+100% {
+opacity: 1; /*结尾状态 透明度为1*/
+}
+}
+#index_bg{-webkit-animation-name: fadeIn; /*动画名称*/
+-webkit-animation-duration: 2s; /*动画持续时间*/
+-webkit-animation-iteration-count: 1; /*动画次数*/
+-webkit-animation-delay: 0s; /*延迟时间*/}
+</style>
+</head>
+<body>
+<div>
+  <div class="col s12" style="padding: 0">
+    <div class="slide">
+      <div>
+        <img id="index_bg" />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery Library -->
+<script type="text/javascript" src="res/js/jquery-1.11.2.min.js"></script>
+<!-- app js -->
+<script type="text/javascript" src="res/js/materialize.js"></script>
+<script type="text/javascript" src="res/js/plugins.js"></script>
+<!-- plugins -->
+<script type="text/javascript" src="res/js/plugins/app.rt.js"></script>
+<script type="text/javascript" src="res/js/plugins/app.api.js"></script>
+<script type="text/javascript" src="res/js/plugins/slick.min.js"></script>
+
+<script type="text/javascript">
+      var param;
+
+      $(document).ready(function() {
+    	  $(".slide").slick({
+          dots : false,
+          infinite : true,
+          speed : 0,
+          autoplay : false,
+          arrows : false,
+          adaptiveHeight: true
+        });
+        var height= $(window).height();
+        $("#index_bg").css("height",height);
+      });
+
+      function initData(callback) {
+        param = initParam();
+      }
+
+      function initLauncherImage(path) {
+        if (isEmpty(path) == false) {
+          $("#index_bg").attr("src", path);
+        }
+      }
+</script>
+</body>
+</html>
